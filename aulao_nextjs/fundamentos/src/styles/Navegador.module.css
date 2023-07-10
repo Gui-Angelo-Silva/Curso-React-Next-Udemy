@@ -1,4 +1,6 @@
 .navegador {
-    background-color: #bbb;
+    /* background-color: crimson; */
     padding: 30px;
+    margin: 10px;
+    border-radius: 8px;
 }
