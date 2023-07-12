@@ -11,7 +11,7 @@ export default function handler(req, res) {
 function handleGet(req, res){
     res.status(200).json({
         id: 3,
-        nome: 'Maria',
-        email: 'mariamariamaria@xcfmail.com'
+        nome: 'Guilherme',
+        email: 'guilherme_angelosilva@hotmail.com'
     })
 }
