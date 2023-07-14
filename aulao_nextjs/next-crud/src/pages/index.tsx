@@ -4,6 +4,7 @@ import Cliente from '@/core/Cliente'
 import Botao from "@/components/Botao";
 import Formulario from "@/components/Formulario";
 import { useState } from "react";
+import BotaoVerde from "@/components/BotaoVerde";
 
 export default function Home() {
   const clientes = [
@@ -37,10 +38,11 @@ export default function Home() {
         {visivel === 'tabela' ? (
           <>
             <div className="flex justify-end">
-              <Botao className="mb-4" 
+              <BotaoVerde 
+                className="mb-4" cor="green"
                 onClick={() => setVisivel('form')}>
-                Novo Cliente
-              </Botao>
+                  Novo Cliente
+              </BotaoVerde>
             </div>
             <Tabela clientes={clientes}
               clienteSelecionado={clienteSelecionado}

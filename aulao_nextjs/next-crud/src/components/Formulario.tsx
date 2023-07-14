@@ -2,6 +2,7 @@ import { useState } from "react";
 import Entrada from "./Entrada";
 import Cliente from "@/core/Cliente";
 import Botao from "./Botao";
+import BotaoCinza from "./BotaoCinza";
 
 interface FormularioProps {
     cliente: Cliente
@@ -41,9 +42,9 @@ export default function Formulario(props: FormularioProps) {
                     onClick={() => props.clienteMudou?.(new Cliente(nome, idade, id))}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
-                <Botao onClick={props.cancelado}>
+                <BotaoCinza cor="gray" onClick={props.cancelado}>
                     Cancelar
-                </Botao>
+                </BotaoCinza>
             </div>
         </div>
     )
