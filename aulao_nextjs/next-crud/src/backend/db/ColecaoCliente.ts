@@ -1,4 +1,4 @@
-import firebaseApp from "../config";
+import db from "../Config";
 import Cliente from "@/core/Cliente";
 import ClienteRepositorio from "../ClienteRepositorio";
 import { QueryDocumentSnapshot, SnapshotOptions, DocumentData } from "firebase/firestore";
@@ -23,11 +23,11 @@ export default class ColecaoCliente implements ClienteRepositorio {
     async salvar(cliente: Cliente): Promise<Cliente> {
         if (cliente?.id) {
             const clienteData = this.#conversor.toFirestore(cliente);
-            await setDoc(doc(collection(firebaseApp, 'clientes'), cliente.id), clienteData);
+            await setDoc(doc(collection(db, 'clientes'), cliente.id), clienteData);
             return cliente;
         } else {
             const clienteData = this.#conversor.toFirestore(cliente);
-            const docRef = await addDoc(collection(firebaseApp, 'clientes'), clienteData);
+            const docRef = await addDoc(collection(db, 'clientes'), clienteData);
             const doc = await getDoc(docRef);
             const data = doc.data();
             return new Cliente(data?.nome, data?.idade, doc.id);
@@ -35,11 +35,11 @@ export default class ColecaoCliente implements ClienteRepositorio {
     }
 
     async excluir(cliente: Cliente): Promise<void> {
-        await deleteDoc(doc(collection(firebaseApp, 'clientes'), cliente.id));
+        await deleteDoc(doc(collection(db, 'clientes'), cliente.id));
     }
 
     async obterTodos(): Promise<Cliente[]> {
-        const querySnapshot = await getDocs(collection(firebaseApp, 'clientes'));
+        const querySnapshot = await getDocs(collection(db, 'clientes'));
         return querySnapshot.docs.map(doc => {
             const data = doc.data();
             return new Cliente(data.nome, data.idade, doc.id);
