@@ -1,6 +1,12 @@
-<h1 align="center">Cadastro Simples com NextJS</h1>
+<h1 align="center">Cadastro Simples</h1>
 
-<p align="center">Projeto foi realizado com o auxílio das aulas do Curso de React, utilizando o firebase como banco de dados</p>
+<p align="center">Projeto foi realizado com o auxílio das aulas do curso de React</p>
+
+## Tecnologias
+- Firestore
+- Next JS
+
+## Resultados
 
 <p align="center">
   <img alt="Tela de Listagem do Projeto" src=".github/capa.png">
