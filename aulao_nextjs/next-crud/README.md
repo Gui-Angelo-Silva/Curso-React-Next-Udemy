@@ -1,6 +1,6 @@
 <h1 align="center">Cadastro Simples</h1>
 
-<p align="center">Projeto foi realizado com o auxílio das aulas do curso de React</p>
+<h3 align="center">Projeto foi realizado com o auxílio das aulas do curso de React</h3>
 
 ## Tecnologias
 - Firestore
